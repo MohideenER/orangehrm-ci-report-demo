@@ -12,7 +12,9 @@ public class BaseTest {
     @BeforeMethod
     public void setup() {
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
+        driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         driver.get("https://opensource-demo.orangehrmlive.com/");
     }
