@@ -16,7 +16,7 @@ public class LoginPage {
     }
 
     public void login(String user, String pass) throws InterruptedException {
-    	Thread.sleep(10000);
+    	Thread.sleep(30000);
         driver.findElement(username).sendKeys(user);
         Thread.sleep(3000);
         driver.findElement(password).sendKeys(pass);
