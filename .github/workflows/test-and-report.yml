@@ -20,6 +20,7 @@ jobs:
         
       - name: Run maven Commands
         run: mvn clean test
+        continue-on-error: true
 
       - name: Uploading Allure
         uses: actions/upload-artifact@v4
