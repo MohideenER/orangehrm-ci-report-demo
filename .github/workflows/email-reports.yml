@@ -1,0 +1,77 @@
+name: Email and reporting
+
+on : 
+  workflow_dispatch
+jobs:
+  run-test:
+    uses:  ./.github/workflows/test-and-report.yml
+
+  generate-report:
+    needs : run-test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download allure results
+        uses: actions/download-artifact@v4
+        with:
+            name: allure-results
+            path: allure-results
+
+      - name: Install Allure CLI
+        run: |
+          curl -o allure.tgz -L https://github.com/allure-framework/allure2/releases/download/2.27.0/allure-2.27.0.tgz
+          tar -xzf allure.tgz
+          sudo mv allure-2.27.0 /opt/allure
+          sudo ln -s /opt/allure/bin/allure /usr/bin/allure
+          
+      - name: Generate Allure report
+        run: allure generate allure-results -o allure-report --clean
+
+      - name: COmpress the allure
+        run: zip -r allure-report.zip allure-report
+
+      - name: Upload the generated Allure report
+        uses: actions/upload-artifact@v4
+        with:
+           name: allure-report
+           path: allure-report.zip
+           
+  send-report-and-link: 
+    needs: generate-report
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download the generated Allure report
+        uses: actions/download-artifact@v4
+        with:
+           name: allure-report
+           path: .
+      - name: Send the Allure report and link
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 587
+          username: mohideen.er22@gmail.com
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: "Allure Report Generated"
+          to: TestHorseCI@yopmail.com
+          from: GitHub CI
+          body: |
+            Hello all,
+            
+            PFA,   
+            The Allure test report.
+            
+            You can also download it directly from the workflow run:
+            https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+  
+            Regards,
+            CI System
+          attachments: allure-report.zip
+    
+
+
+           
+
+      
+    
+  
