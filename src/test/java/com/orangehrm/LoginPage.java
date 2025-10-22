@@ -1,7 +1,8 @@
 package com.orangehrm;
-
+import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 
 public class LoginPage {
     private WebDriver driver;
@@ -20,7 +21,7 @@ public class LoginPage {
         driver.findElement(username).sendKeys(user);
         Thread.sleep(3000);
         driver.findElement(password).sendKeys(pass);
-        Thread.sleep(3000);
+        Thread.sleep(30000);
         driver.findElement(loginBtn).click();
     }
 
