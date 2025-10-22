@@ -21,21 +21,21 @@ public class LoginPage {
     }
  
     public void login(String user, String pass) throws InterruptedException {
-    	Thread.sleep(10000);
+    	// Thread.sleep(10000);
     	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
     	WebElement name = wait.until(ExpectedConditions.visibilityOfElementLocated(username));
     	name.sendKeys(user);		
  
-        Thread.sleep(3000);
-        WebElement passwd = wait.until(ExpectedConditions.visibilityOfElementLocated(password));
-    	passwd.sendKeys(pass);
-        Thread.sleep(3000);
+        // Thread.sleep(3000);
+      WebElement passwd = wait.until(ExpectedConditions.visibilityOfElementLocated(password));
+    	 passwd.sendKeys(pass);
+        // Thread.sleep(3000);
         WebElement loginbtn = wait.until(ExpectedConditions.visibilityOfElementLocated(loginBtn));
         loginbtn.click();
     }
  
     public boolean isLoginSuccessful() throws InterruptedException {
-    	Thread.sleep(3000);
+    	// Thread.sleep(3000);
     	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
     	WebElement dashboardHeader = wait.until(ExpectedConditions.visibilityOfElementLocated(dashboard));
         return dashboardHeader.isDisplayed();
