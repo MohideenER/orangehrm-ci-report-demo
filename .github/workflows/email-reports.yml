@@ -51,7 +51,7 @@ jobs:
           server_address: smtp.gmail.com
           server_port: 587
           username: mohideen.er22@gmail.com
-          password: ${{ secrets.EMAIL_PASSWORD }}
+          password: rxwcebbzbegzabnf
           subject: "Allure Report Generated"
           to: TestHorseCI@yopmail.com
           from: GitHub CI
