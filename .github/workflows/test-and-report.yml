@@ -1,1 +1,28 @@
+name: Run Maven Test and Generating report
+on: 
+  workflow_call
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checking out repo
+        uses: actions/checkout@v4
+      - name: Set up Java version 17
+        uses: actions/setup-java@v3
+        with: 
+          java-version: "17"
+          distribution: 'temurin'
 
+      - name: Run maven Commands
+        run: mvn clean test
+
+      - name: Uploading Allure
+        uses: actions/upload-artifact@v4
+        with: 
+          name: allure-results
+          path: allure-results
+      
+
+        
+      
+  
