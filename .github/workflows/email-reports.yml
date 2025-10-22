@@ -54,7 +54,8 @@ jobs:
           password: rxwcebbzbegzabnf
           subject: "Allure Report Generated"
           to: TestHorseCI@yopmail.com
-          from: GitHub CI
+          from: GitHub CI <mohideen.er22@gmail.com>
+
           body: |
             Hello all,
             
