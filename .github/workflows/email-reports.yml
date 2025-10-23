@@ -30,7 +30,7 @@ jobs:
       - name: COmpress the allure
         run: |
           cd allure-report
-          zip -r ../allure-report.zip .
+          zip -r ../allure-report.zip ./*
 
       - name: Upload the generated Allure report
         uses: actions/upload-artifact@v4
