@@ -20,8 +20,6 @@ jobs:
       - name: Setup Google Chrome
         uses: browser-actions/setup-chrome@v1
 
-      - name: Make sure chromedriver version matches the GitHub Runner's Google Chrome version
-        uses: jamesmortensen/chromedriver-matcher-action@v1
   
       - name: Run maven Commands
         run: mvn clean test -Dallure.results.directory=allure-results
