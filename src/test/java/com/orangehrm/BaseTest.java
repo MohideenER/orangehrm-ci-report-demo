@@ -13,7 +13,13 @@ public class BaseTest {
     public void setup() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");
+        // ✅ Required in GitHub Actions (Linux, headless environment)
+        options.addArguments("--headless=new"); // modern headless mode
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+
+        // ✅ Avoid user data directory conflict (your CI error)
+        options.addArguments("--user-data-dir=/tmp/chrome-user-data-" + UUID.randomUUID());
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         driver.get("https://opensource-demo.orangehrmlive.com/");
