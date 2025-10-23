@@ -28,7 +28,9 @@ jobs:
         run: allure generate allure-results -o allure-report --clean
 
       - name: COmpress the allure
-        run: zip -r allure-report.zip allure-report
+        run: |
+          cd allure-report
+          zip -r ../allure-report.zip .
 
       - name: Upload the generated Allure report
         uses: actions/upload-artifact@v4
