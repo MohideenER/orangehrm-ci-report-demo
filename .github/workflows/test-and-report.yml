@@ -12,11 +12,18 @@ jobs:
         with: 
           java-version: "17"
           distribution: 'temurin'
-      - name: Install Google Chrome
-        run: |
-          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-          sudo apt install -y ./google-chrome-stable_current_amd64.deb
+      # - name: Install Google Chrome
+      #   run: |
+      #     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+      #     sudo apt install -y ./google-chrome-stable_current_amd64.deb
 
+      - name: Setup Google Chrome
+        uses: browser-actions/setup-chrome@v1
+
+      - name: Setup ChromeDriver
+        uses: browser-actions/setup-chromedriver@v1
+        with:
+          chrome-version: latest
         
       - name: Run maven Commands
         run: mvn clean test -Dallure.results.directory=allure-results
