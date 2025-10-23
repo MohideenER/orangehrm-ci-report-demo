@@ -27,16 +27,17 @@ jobs:
       - name: Generate Allure report
         run: allure generate allure-results -o allure-report --clean
 
-      - name: COmpress the allure
-        run: |
-          # cd allure-report
-          zip -r ../allure-report.zip ./*
+      # - name: COmpress the allure
+      #   run: |
+      #     # cd allure-report
+      #     zip -r ../allure-report.zip ./*
 
       - name: Upload the generated Allure report
         uses: actions/upload-artifact@v4
         with:
            name: allure-report
-           path: allure-report.zip
+           path: allure-report
+           # path: allure-report.zip
            
   send-report-and-link: 
     needs: generate-report
