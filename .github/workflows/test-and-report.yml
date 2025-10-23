@@ -21,10 +21,10 @@ jobs:
         uses: browser-actions/setup-chrome@v1
 
       - name: Setup ChromeDriver
-        uses: browser-actions/setup-chromedriver@v1
+        uses: SeleniumHQ/setup-chromedriver@v1
         with:
-          chrome-version: latest
-        
+          version: latest  # or specify a version like '114.0.5735.90'
+  
       - name: Run maven Commands
         run: mvn clean test -Dallure.results.directory=allure-results
         continue-on-error: true
