@@ -72,8 +72,9 @@ jobs:
 
       - name: Archive Allure report as tar.gz
         run: tar -czf allure-report.tar.gz ./allure-report
-
-           
+ 
+        # attachments: allure-report.tar.gz    - # Not accepting by gmail - blocks all - ZIP, ZIPX, TAR, TAR.GZ.
+   
       - name: Send the Allure report and link
         uses: dawidd6/action-send-mail@v3
         with:
@@ -117,7 +118,3 @@ jobs:
             </html>
              
             
-          # attachments: allure-report.tar.gz    - # Not accepting by gmail - blocks all - ZIP, ZIPX, TAR, TAR.GZ.
-
-         
-  
