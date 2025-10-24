@@ -44,12 +44,12 @@ jobs:
            name: allure-report
            path: allure-report
 
-      # - name: Deploy Allure report to GitHub Pages
-      #   uses: peaceiris/actions-gh-pages@v3
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     publish_branch: gh-pages
-      #     publish_dir: allure-report
+      - name: Deploy Allure report to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: allure-report
            
   send-report-and-link: 
     needs: generate-report
@@ -90,7 +90,7 @@ jobs:
             The Allure test report.
             
             You can also download it directly from here:
-            # View the live report:  https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            View the live report:  https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
             View the report : https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
 
             # View the report directly from workflow run : <a href=" https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/?run_id=${{ github.run_id }}">Report....</a>
