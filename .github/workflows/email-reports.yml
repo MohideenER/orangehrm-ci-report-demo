@@ -80,7 +80,7 @@ jobs:
           subject: "Allure Report Generated"
           to: TestHorseCI@yopmail.com
           from: GitHub CI <mohideen.er22@gmail.com>
-          content_type: text/html
+          content_type: html
 
           body: |
             <p> 
