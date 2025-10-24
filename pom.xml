@@ -47,6 +47,11 @@
           <suiteXmlFiles>
             <suiteXmlFile>testng.xml</suiteXmlFile>
           </suiteXmlFiles>
+			<plugin>
+		  <systemPropertyVariables>
+			  <allure.results.directory>allure-results</allure.results.directory>
+			</systemPropertyVariables>
+ 
         </configuration>
       </plugin>
 
