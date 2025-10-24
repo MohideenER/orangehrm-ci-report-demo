@@ -65,7 +65,10 @@ jobs:
 
       - name: Zip the Allure report for attachment
         run: zip -r allure-report.zip ./allure-report
-      
+
+      - name: Archive Allure report as tar.gz
+        run: tar -czf allure-report.tar.gz ./allure-report
+
            
       - name: Send the Allure report and link
         uses: dawidd6/action-send-mail@v3
@@ -95,7 +98,7 @@ jobs:
   
             Regards,
             CI System
-          attachments: allure-report.zip
+          attachments: allure-report.tar.gz
 
          
   
