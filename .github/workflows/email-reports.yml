@@ -85,7 +85,7 @@ jobs:
           subject: "Allure Report Generated - Run #${{ github.run_number }}"
           to: TestHorseCIdemo@yopmail.com, qa-teamhorse@yopmail.com, devleadhorse@yopmail.com
           from: GitHub CI <mohideen.er22@gmail.com>
-          body_html: >
+          html_body: |
             <html>
               <body>
                 <p>Hello all,</p>
