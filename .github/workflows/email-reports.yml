@@ -98,7 +98,8 @@ jobs:
   
             Regards,
             CI System
-          attachments: allure-report.tar.gz
+            
+          # attachments: allure-report.tar.gz    - # Not accepting by gmail - blocks all - ZIP, ZIPX, TAR, TAR.GZ.
 
          
   
