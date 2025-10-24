@@ -82,7 +82,8 @@ jobs:
           username: mohideen.er22@gmail.com
           password: ${{ secrets.SEND_MAIL_PASSWORD }}
           subject: "Allure Report Generated"
-          to: TestHorseCIdemo@yopmail.com
+          to: TestHorseCIdemo@yopmail.com, qa-teamhorse@yopmail.com, devleadhorse@example.com
+            
           from: GitHub CI <mohideen.er22@gmail.com>
           content_type: text/html
 
