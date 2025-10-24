@@ -88,22 +88,42 @@ jobs:
 
           body: |
             
-            Hello all,
-            
-            PFA,   
-            The Allure test report.
-            
-            You can also download it directly from here:
-            View the live report:  https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
-            Click and View the report : https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
-
-            # View the report directly from workflow run : <a href=" https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/?run_id=${{ github.run_id }}">Report....</a>
-
-            # View workflow run details: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
-            
-            
-            Regards,
-            CI System 
+             <html>
+              <body>
+                <p>Hello all,</p>
+                <p>PFA,<br>
+                The Allure test report has been generated.</p>
+  
+                <p>You can also view it directly from here:</p>
+  
+                <ul>
+                  <li><strong>View the live report:</strong>
+                    <a href="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}">
+                      GitHub Actions Run
+                    </a>
+                  </li>
+                  <li><strong>Click and View the report:</strong>
+                    <a href="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/">
+                      Allure Report (GitHub Pages)
+                    </a>
+                  </li>
+                  <li><strong>View the report directly from workflow run:</strong>
+                    <a href="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/?run_id=${{ github.run_id }}">
+                      Open Report
+                    </a>
+                  </li>
+                </ul>
+  
+                <p><strong>View workflow run details:</strong>
+                  <a href="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}">
+                    GitHub Actions Run #${{ github.run_number }}
+                  </a>
+                </p>
+  
+                <p>Regards,<br>
+                CI System</p>
+              </body>
+              </html>
             
           # attachments: allure-report.tar.gz    - # Not accepting by gmail - blocks all - ZIP, ZIPX, TAR, TAR.GZ.
 
