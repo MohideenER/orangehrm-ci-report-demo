@@ -18,7 +18,7 @@ jobs:
             path: allure-results
             # path: . 
 
-      - name: List Allure Results Files for Debugging
+      - name: List Allure Results Files - did for debugging
         run: |
           echo "Contents of allure-results folder:"
           ls -R allure-results
@@ -35,7 +35,7 @@ jobs:
       - name: Generate Allure report
         run: allure generate allure-results -o allure-report --clean
 
-      - name: List Allure Report contents (for debugging)
+      - name: List Allure Report contents - did for debugging
         run: ls -R allure-report
 
       - name: Upload the generated Allure report folder
@@ -91,6 +91,7 @@ jobs:
             View the report directly from workflow run : https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/?run_id=${{ github.run_id }}
 
             View workflow run details: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            # Click <a href="https://example.com">here</a>
   
             Regards,
             CI System
