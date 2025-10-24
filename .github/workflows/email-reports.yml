@@ -2,6 +2,10 @@ name: Email and reporting
 
 on : 
   workflow_dispatch
+
+permissions:
+  contents: write
+  
 jobs:
   run-test:
     uses:  ./.github/workflows/test-and-report.yml
