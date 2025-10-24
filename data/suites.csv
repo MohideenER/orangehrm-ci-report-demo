@@ -1,2 +1,2 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Fri Oct 24 09:50:55 UTC 2025","Fri Oct 24 09:50:58 UTC 2025","2754","OrangeHRM Login Suite","LoginTest","com.orangehrm.LoginTest","com.orangehrm.LoginTest","testLogin","Verify valid login to OrangeHRM","Test Description: Login with valid credentials and verify dashboard is displayed."
+"passed","Fri Oct 24 10:03:12 UTC 2025","Fri Oct 24 10:03:14 UTC 2025","2034","OrangeHRM Login Suite","LoginTest","com.orangehrm.LoginTest","com.orangehrm.LoginTest","testLogin","Verify valid login to OrangeHRM","Test Description: Login with valid credentials and verify dashboard is displayed."
