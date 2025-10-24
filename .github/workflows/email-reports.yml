@@ -86,7 +86,7 @@ jobs:
           from: GitHub CI <mohideen.er22@gmail.com>
           content_type: text/html
 
-          body: |
+          body: >
             
              <html>
               <body>
