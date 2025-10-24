@@ -80,8 +80,10 @@ jobs:
           subject: "Allure Report Generated"
           to: TestHorseCI@yopmail.com
           from: GitHub CI <mohideen.er22@gmail.com>
+          content_type: text/html
 
           body: |
+            <p> 
             Hello all,
             
             PFA,   
@@ -97,7 +99,7 @@ jobs:
             
   
             Regards,
-            CI System
+            CI System  </p>
             
           # attachments: allure-report.tar.gz    - # Not accepting by gmail - blocks all - ZIP, ZIPX, TAR, TAR.GZ.
 
