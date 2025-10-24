@@ -23,7 +23,7 @@ jobs:
           echo "Contents of allure-results folder:"
           ls -R allure-results
           echo "Check if container.json exists:"
-          find allure-results -name container.json
+          find allure-results -name container.json || echo "container.json not found"
 
       - name: Install Allure CLI
         run: |
