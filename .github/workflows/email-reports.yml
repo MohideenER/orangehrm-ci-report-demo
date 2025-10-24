@@ -45,42 +45,42 @@ jobs:
            path: allure-report
           
            
-  # send-report-and-link: 
-  #   needs: generate-report
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Download the generated Allure report
-  #       uses: actions/download-artifact@v4
-  #       with:
-  #          name: allure-report
-  #          path: ./allure-report
+  send-report-and-link: 
+    needs: generate-report
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download the generated Allure report
+        uses: actions/download-artifact@v4
+        with:
+           name: allure-report
+           path: ./allure-report
 
-  #     - name: Zip the Allure report for attachment
-  #       run: zip -r allure-report.zip ./allure-report
+      - name: Zip the Allure report for attachment
+        run: zip -r allure-report.zip ./allure-report
            
-  #     - name: Send the Allure report and link
-  #       uses: dawidd6/action-send-mail@v3
-  #       with:
-  #         server_address: smtp.gmail.com
-  #         server_port: 587
-  #         username: mohideen.er22@gmail.com
-  #         password: rxwcebbzbegzabnf
-  #         subject: "Allure Report Generated"
-  #         to: TestHorseCI@yopmail.com
-  #         from: GitHub CI <mohideen.er22@gmail.com>
+      - name: Send the Allure report and link
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 587
+          username: mohideen.er22@gmail.com
+          password: rxwcebbzbegzabnf
+          subject: "Allure Report Generated"
+          to: TestHorseCI@yopmail.com
+          from: GitHub CI <mohideen.er22@gmail.com>
 
-  #         body: |
-  #           Hello all,
+          body: |
+            Hello all,
             
-  #           PFA,   
-  #           The Allure test report.
+            PFA,   
+            The Allure test report.
             
-  #           You can also download it directly from the workflow run:
-  #           https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            You can also download it directly from the workflow run:
+            https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
   
-  #           Regards,
-  #           CI System
-  #         attachments: allure-report
+            Regards,
+            CI System
+          attachments: allure-report
 
          
   
