@@ -43,12 +43,20 @@ jobs:
         with:
            name: allure-report
            path: allure-report
-          
+
+      # - name: Deploy Allure report to GitHub Pages
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_branch: gh-pages
+      #     publish_dir: allure-report
            
   send-report-and-link: 
     needs: generate-report
     runs-on: ubuntu-latest
     steps:
+    
+       # COmmenting the below to send the report directly instead of send the report and open in local web browser.   
       - name: Download the generated Allure report
         uses: actions/download-artifact@v4
         with:
@@ -57,6 +65,7 @@ jobs:
 
       - name: Zip the Allure report for attachment
         run: zip -r allure-report.zip ./allure-report
+      
            
       - name: Send the Allure report and link
         uses: dawidd6/action-send-mail@v3
@@ -64,7 +73,7 @@ jobs:
           server_address: smtp.gmail.com
           server_port: 587
           username: mohideen.er22@gmail.com
-          password: rxwcebbzbegzabnf
+          password: ${{ secrets.SEND_MAIL_PASSWORD }}
           subject: "Allure Report Generated"
           to: TestHorseCI@yopmail.com
           from: GitHub CI <mohideen.er22@gmail.com>
@@ -75,12 +84,17 @@ jobs:
             PFA,   
             The Allure test report.
             
-            You can also download it directly from the workflow run:
-            https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            You can also download it directly from here:
+            # https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            View the report : https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
+
+            View the report directly from workflow run : https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/?run_id=${{ github.run_id }}
+
+            View workflow run details: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
   
             Regards,
             CI System
-          attachments: allure-report
+          attachments: allure-report.zip
 
          
   
