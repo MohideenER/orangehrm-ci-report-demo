@@ -17,6 +17,13 @@ jobs:
             name: allure-results
             path: allure-results
 
+      - name: List Allure Results Files for Debugging
+        run: |
+          echo "Contents of allure-results folder:"
+          ls -R allure-results
+          echo "Check if container.json exists:"
+          find allure-results -name container.json
+
       - name: Install Allure CLI
         run: |
           curl -o allure.tgz -L https://github.com/allure-framework/allure2/releases/download/2.27.0/allure-2.27.0.tgz
@@ -73,4 +80,6 @@ jobs:
             Regards,
             CI System
           attachments: allure-report.zip
-    
+
+         
+  
