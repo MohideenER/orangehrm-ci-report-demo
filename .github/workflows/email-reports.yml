@@ -84,7 +84,7 @@ jobs:
           subject: "Allure Report Generated"
           to: TestHorseCIdemo@yopmail.com
           from: GitHub CI <mohideen.er22@gmail.com>
-          content_type: html
+          content_type: text/html
 
           body: |
             
