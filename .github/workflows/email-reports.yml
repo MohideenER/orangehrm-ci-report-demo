@@ -81,8 +81,8 @@ jobs:
           server_port: 587
           username: mohideen.er22@gmail.com
           password: ${{ secrets.SEND_MAIL_PASSWORD }}
-          subject: "Allure Report Generated - Run #${{ github.run_number }} - ${{ github.run_started_at }}"
-          to: TestHorseCIdemo@yopmail.com, qa-teamhorse@yopmail.com, devleadhorse@yopmail.com, vinayvishnu725@gmail.com
+          subject: "Allure Report Generated - Run #${{ github.run_number }}"
+          to: TestHorseCIdemo@yopmail.com, qa-teamhorse@yopmail.com, devleadhorse@yopmail.com
           from: GitHub CI <mohideen.er22@gmail.com>
           body_html: >
             <html>
