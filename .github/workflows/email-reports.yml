@@ -79,7 +79,7 @@ jobs:
   
             Regards,
             CI System
-          attachments: allure-report.zip
+          attachments: allure-report
 
          
   
