@@ -114,12 +114,6 @@ jobs:
                   </li>
                 </ul>
   
-                <p><strong>View workflow run details:</strong>
-                  <a href="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}">
-                    GitHub Actions Run #${{ github.run_number }}
-                  </a>
-                </p>
-  
                 <p>Regards,<br>
                 CI System</p>
               </body>
