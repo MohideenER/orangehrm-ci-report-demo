@@ -81,15 +81,12 @@ jobs:
           server_port: 587
           username: mohideen.er22@gmail.com
           password: ${{ secrets.SEND_MAIL_PASSWORD }}
-          subject: "Allure Report Generated"
+          subject: "Allure Report Generated - Run #${{ github.run_number }} "
           to: TestHorseCIdemo@yopmail.com, qa-teamhorse@yopmail.com, devleadhorse@yopmail.com
-            
           from: GitHub CI <mohideen.er22@gmail.com>
           content_type: text/html
-
-          body: >
-            
-             <html>
+          body: |
+            <html>
               <body>
                 <p>Hello all,</p>
                 <p>PFA,<br>
@@ -118,7 +115,8 @@ jobs:
                 <p>Regards,<br>
                 CI System</p>
               </body>
-              </html>
+            </html>
+             
             
           # attachments: allure-report.tar.gz    - # Not accepting by gmail - blocks all - ZIP, ZIPX, TAR, TAR.GZ.
 
