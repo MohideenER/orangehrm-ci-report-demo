@@ -15,7 +15,8 @@ jobs:
         uses: actions/download-artifact@v4
         with:
             name: allure-results
-            path: allure-results
+            # path: allure-results
+            path: . 
 
       - name: List Allure Results Files for Debugging
         run: |
