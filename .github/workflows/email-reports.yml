@@ -95,7 +95,7 @@ jobs:
                 <p>You can also view it directly from here:</p>
   
                 <ul>
-                  <li><strong>View the live report:</strong>
+                  <li><strong>View the Github action Run:</strong>
                     <a href="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}">
                       GitHub Actions Run
                     </a>
@@ -105,11 +105,12 @@ jobs:
                       Allure Report (GitHub Pages)
                     </a>
                   </li>
+                  <!--
                   <li><strong>View the report directly from workflow run:</strong>
                     <a href="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/?run_id=${{ github.run_id }}">
                       Open Report
                     </a>
-                  </li>
+                  </li> -->
                 </ul>
   
                 <p>Regards,<br>
