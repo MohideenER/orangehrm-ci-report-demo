@@ -100,17 +100,18 @@ jobs:
                       GitHub Actions Run
                     </a>
                   </li>
+                  <!--
                   <li><strong>Click and View the report:</strong>
                     <a href="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/">
                       Allure Report (GitHub Pages)
                     </a>
                   </li>
-                  <!--
+                   -->
                   <li><strong>View the report directly from workflow run:</strong>
                     <a href="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/?run_id=${{ github.run_id }}">
                       Open Report
                     </a>
-                  </li> -->
+                  </li>
                 </ul>
   
                 <p>Regards,<br>
