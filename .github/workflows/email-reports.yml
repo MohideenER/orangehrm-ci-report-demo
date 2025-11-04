@@ -3,8 +3,8 @@ name: Email and reporting
 on : 
   workflow_dispatch
 
-permissions:
-  contents: write
+# permissions:
+#   contents: write
   
 jobs:
   run-test:
@@ -83,7 +83,7 @@ jobs:
           username: mohideen.er22@gmail.com
           password: ${{ secrets.SEND_MAIL_PASSWORD }}
           subject: "Allure Report Generated - Run #${{ github.run_number }}"
-          to: TestHorseCIdemo@yopmail.com, qa-teamhorse@yopmail.com, devleadhorse@yopmail.com, ostan@codefcraft.co.in
+          to: TestHorseCIdemo@yopmail.com, qa-teamhorse@yopmail.com, devleadhorse@yopmail.com
           from: GitHub CI <mohideen.er22@gmail.com>
           html_body: |
             <html>
