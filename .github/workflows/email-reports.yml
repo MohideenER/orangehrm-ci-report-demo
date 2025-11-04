@@ -29,12 +29,12 @@ jobs:
       #     echo "Check if container.json exists:"
       #     find allure-results -name container.json || echo "container.json not found"
 
-      # - name: Install Allure CLI
-      #   run: |
-      #     curl -o allure.tgz -L https://github.com/allure-framework/allure2/releases/download/2.27.0/allure-2.27.0.tgz
-      #     tar -xzf allure.tgz
-      #     sudo mv allure-2.27.0 /opt/allure
-      #     sudo ln -s /opt/allure/bin/allure /usr/bin/allure
+      - name: Install Allure CLI
+        run: |
+          curl -o allure.tgz -L https://github.com/allure-framework/allure2/releases/download/2.27.0/allure-2.27.0.tgz
+          tar -xzf allure.tgz
+          sudo mv allure-2.27.0 /opt/allure
+          sudo ln -s /opt/allure/bin/allure /usr/bin/allure
           
       - name: Generate Allure report
         run: allure generate allure-results -o allure-report --clean
