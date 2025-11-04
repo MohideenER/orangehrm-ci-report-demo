@@ -61,17 +61,17 @@ jobs:
     steps:
     
        # COmmenting the below to send the report directly instead of send the report and open in local web browser.   
-      - name: Download the generated Allure report
-        uses: actions/download-artifact@v4
-        with:
-           name: allure-report
-           path: ./allure-report
+      # - name: Download the generated Allure report
+      #   uses: actions/download-artifact@v4
+      #   with:
+      #      name: allure-report
+      #      path: ./allure-report
 
-      - name: Zip the Allure report for attachment
-        run: zip -r allure-report.zip ./allure-report
+      # - name: Zip the Allure report for attachment
+      #   run: zip -r allure-report.zip ./allure-report
 
-      - name: Archive Allure report as tar.gz
-        run: tar -czf allure-report.tar.gz ./allure-report
+      # - name: Archive Allure report as tar.gz
+      #   run: tar -czf allure-report.tar.gz ./allure-report
  
         # attachments: allure-report.tar.gz    - # Not accepting by gmail - blocks all - ZIP, ZIPX, TAR, TAR.GZ.
    
